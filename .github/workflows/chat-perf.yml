@@ -5,40 +5,40 @@ on:
     inputs:
       baseline_build:
         description: "Baseline version or commit SHA (e.g. \"1.116.0\", \"insiders\", \"abc1234\"). Default: config.jsonc baselineBuild."
-        required: false
-        type: string
+        required: true
+        type: strin
       test_build:
         description: "Branch, PR ref, commit SHA, or version to test (e.g. \"my-feature\", \"refs/pull/12345/head\", \"1.115.0\"). Default: current pipeline branch (probably main)."
-        required: false
+        required: true
         type: string
       runs:
         description: "Runs per scenario"
-        required: false
+        required: true
         type: number
         default: 7
       scenarios:
         description: "Comma-separated scenario list. Default: all registered scenarios."
-        required: false
+        required: true
         type: string
         default: ""
       threshold:
         description: "Regression threshold fraction (0.2 = 20%)"
-        required: false
+        required: true
         type: number
         default: 0.2
       skip_leak_check:
         description: "Skip the memory leak check step"
-        required: false
+        required: true
         type: boolean
-        default: false
+        default: true
       test_settings:
         description: 'JSON object of VS Code settings for the test build (e.g. {"chat.experimental.smoothStreaming.enabled": true})'
-        required: false
+        required: true
         type: string
         default: ""
       baseline_settings:
         description: 'JSON object of VS Code settings for the baseline build'
-        required: false
+        required: true
         type: string
         default: ""
 permissions:
